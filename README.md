@@ -26,7 +26,7 @@ Our App enables you to find the flight that’s most likely get delayed. To do t
 ## Model Creation
 ### Data cleaning Process
 * Read the data source [Airlines data](http://datasets.flowingdata.com/tuts/maparcs/flights.csv)
-*  [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) to perform all ETL.
+* [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) to perform all ETL.
 * **Extraction**
   * Read the CSV and load into a pandas DataFrame.
   * The data points used is above 5 million
@@ -46,11 +46,6 @@ Our App enables you to find the flight that’s most likely get delayed. To do t
   * Create same format of input as train and test data for 1 input 
   * Load the model and use this user input to get the prediction of delay in percentage
 
-
-* **Visualizations**
-Insert the images
-
-
 * **Built With**
   * Python
   * Pandas
@@ -58,15 +53,15 @@ Insert the images
   * Scikit-learn (LogisticRegression)
   * Scikit-learn (LogisticRegression)
   * HTML, CSS, Bootstrap CSS, Javascript
- 
-• Part 1: Data_Cleaning.ipynb - Clean and prepare the dataset
-• Part 2: ML_logistic.ipynb – Create, train, test, save Logistic regression model
-• Part 3: Delay_Predict.ipynb – Test user input
-• Part 4: airline.py – Flask, get user input, load model, predict the arrival delay percentage
+
+• Part 1: [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) - Clean and prepare the dataset
+• Part 2: [ML_logistic.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/ML_logistic.ipynb) – Create, train, test, save Logistic regression model
+• Part 3: [Delay_Predict.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Delay_Predict.ipynb) – Test user input
+• Part 4: static/js/[barracechartlogic.js](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/barracechartlogic.js)airline.py – Flask, get user input, load model, predict the arrival delay percentage
 • Part 5: gauge.js – plot arrival delay percentage in gauge form
 • Part 6: analytics.js – plot the route map
 • Part 7: barchart.js – plot the bar chart comparison of arrival prediction delay for all airlines
-• Part 8: .js – plot the +/- 3 days arrival delay prediction for the user input airline
+• Part 8: table.js – plot the +/- 3 days arrival delay prediction for the user input airline
 
 Append DataFrames to tables. Be sure to use the index set earlier.
 * Confirm successful **Load** by querying database.
@@ -75,35 +70,36 @@ Append DataFrames to tables. Be sure to use the index set earlier.
 	* [flights_data json file](static/data/flights_data.json) - used as input for the second visualization
 
 ## Description of Files in Github repository
-
 Detailed description on how the project was built:
 
 - Main Data Sources
 	- [Airlines data](http://datasets.flowingdata.com/tuts/maparcs/flights.csv)
 	- [Airport details](https://gist.github.com/tdreyno/4278655#file-airports-json)
-	- [# of Flights over time](https://think.cs.vt.edu/corgis/json/airlines/airlines.json?forcedownload=1)
+    - [flights_Year_Data.csv] Downloaded from Kaggle. The file size of this file is 500+MB, not able to upload to GitHub. Download “flights.csv” from “https://www.kaggle.com/usdot/flight-delays#flights.csv” and rename it to “flights_Year_Data.csv” in local
 
 - Back-end
-    - [app.py](https://github.com/contactgokul/airports-flights-analysis/app.py) is a Flask app that creates API endpoints accessible to JavaScript and can render content onto the template
+    - [airline.py](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/airline.py) Flask, get user input, load model, predict the arrival delay percentage
 		- @app.route(‘/’) for Main Index File
-		- @app.route("/Airportlogicindex") for Airport locations
-		- @app.route("/curvedpathindex") for Route Maps
-		- @app.route("/barracechartindex") for Bar Race Chart
-    - [Flights_Project.ipynb.ipynb](https://github.com/contactgokul/airports-flights-analysis/Flights_Project.ipynb), [Flights_Bar_Race_Chart_Data_Cleaning.ipynb](https://github.com/contactgokul/airports-flights-analysis/Flights_Bar_Race_Chart_Data_Cleaning.ipynb) and [Data_Cleaning.ipynb](https://github.com/contactgokul/airports-flights-analysis/Data_Cleaning.ipynb) for data cleaning and exporting into a database
-    -[mysql queries](Queries.sql) is the MySQL database used in this project
+		- @app.route("/analytics") for real time visuals and predictions for the predicted
+    - [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) - Clean and prepare the dataset
+    - [ML_logistic.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/ML_logistic.ipynb) – Create, train, test, save Logistic regression model
+    - [Delay_Predict.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Delay_Predict.ipynb) – Test user input
     
 - Front-end
-    - templates/[index.html](https://github.com/contactgokul/airports-flights-analysis/tree/master/templates/index.html) is the dashboard and the template containing text and graphs
-    - static/css/[style.css](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/style.css) contains formatting specifications
-    - static/js/[Airportlogic.js](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/Airportlogic.js) is the main logic for the Airports locations visual
-	- static/js/[curvedpathlogic.js](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/curvedpathlogic.js) is the main logic for the Airport routes visual
-    - static/js/[barracechartlogic.js](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/barracechartlogic.js) is the main logic for the Bar Race chart visual
+    - templates/[home.html](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/templates/home.html) is the landing page of the Application and allos the User to select the Airlines and other details to predict the delay % and compare with other airlines upon submission
+    - static/js/[analytics.html](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/templates/home.html) is the final page that shows all the predictions, comparisons
+    - static/js/[gauge.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/gauge.js) - plot arrival delay percentage in gauge form
+    - static/js/[analytics.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/analytics.js) - plot the route map
+    - static/js/[barchart.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/barchart.js) - plot the bar chart comparison of arrival prediction delay for all the Airlines
+    - static/js/[table.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/table.js) plot the +/- 3 days arrival delay prediction for the user input airline
+    - static/css/[style.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/css.css) contains formatting specifications
 	- [leaflet.curve.js](https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js) is a new java script which has been used to draw a curved path/line between two sets of coordinates
     - static/js/`config.js` contains the API key for mapbox
 
-Final App deployed through Heroku in https://airports-flights-analysis.herokuapp.com/
-
 ## Output and Analysis
+
+* **Visualizations**
+Insert the images
 
 The landing page of the application has three buttons which direct to three individual dashboards.
 
