@@ -26,7 +26,7 @@ Our App enables you to find the flight that’s most likely get delayed. To do t
 ## Model Creation
 ### Data cleaning Process
 * Read the data source [Airlines data](http://datasets.flowingdata.com/tuts/maparcs/flights.csv)
-*  [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/Data_Cleaning.ipynb) to perform all ETL.
+*  [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) to perform all ETL.
 * **Extraction**
   * Read the CSV and load into a pandas DataFrame.
   * The data points used is above 5 million
