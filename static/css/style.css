@@ -1,0 +1,36 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map {height: 270px; width: 600px;}
+body,
+html {
+  height: 100%;
+}
+
+#barchart {height: 270px; width: 600px;}
+body,
+html {
+  height: 100%;
+}
+
+/* for Barchart */
+.bar{
+    fill: steelblue;
+  }
+
+  .bar:hover{
+    fill: brown;
+  }
+
+	.axis {
+	  font: 10px sans-serif;
+	}
+
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	}
