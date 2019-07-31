@@ -11,7 +11,7 @@ Bharat, Gokul and Ritesh @UCB @2019
 The Airline-Delay Predictor App gives you the ability to predict the probability of arrival delay to your destination. 
 The probability of finding the delay prediction is based on one whole year flight statistics from “LINK” and using the Logistic Regression Model.
 We used python flask app to create an app where user selects the desired route (Origin and Destination airports), airline, date of travel and departure time.
-Our model predicts the arrival delay % and also gives the user the delay prediction for +/- 3 days from the entered date and for that same date the delay prediction in percentage of other airlines if travelled on the same date and time.
+Our model predicts the arrival delay % and also gives the user the delay prediction for -2/+4 days from the entered date and for that same date the delay prediction in percentage of other airlines if travelled on the same date and time.
 
 ## Approach summary
 
@@ -76,7 +76,7 @@ Detailed description on how the project was built:
     - static/js/[gauge.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/gauge.js) - plot arrival delay percentage in gauge form
     - static/js/[analytics.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/analytics.js) - plot the route map using the longitude and latitude coordinates of the airports selected
     - static/js/[barchart.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/barchart.js) - plot the bar chart comparison of arrival prediction delay for all the Airlines
-    - static/js/[table.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/table.js) plot the +/- 3 days arrival delay prediction for the user input airline
+    - static/js/[table.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/table.js) plot the -2/+4 days arrival delay prediction for the user input airline
     - static/css/[style.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/style.css) and static/css/[css.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/css.css) contains formatting specifications
 	- [leaflet.curve.js](https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js) is a new java script which has been used to draw a curved path/line between two sets of coordinates
     - static/js/`config.js` contains the API key for mapbox
@@ -95,7 +95,7 @@ Shows the route map using a curved path between the source and destination airpo
 ![image1](static/images/image1.png)
 
 * Table:
-A tabular representation of the delay percentage for the selected Airline with arrival delay prediction upto -/+ 3 days highlighting the selected data in Orange color.
+A tabular representation of the delay percentage for the selected Airline with arrival delay prediction upto -2/+ 4 days highlighting the selected data in Orange color.
 * Bar Chart:
 Bar chart comparison of arrival prediction delay for all airlines.
 ![image2](static/images/image2.png)
