@@ -4,9 +4,6 @@
 
 Bharat, Gokul and Ritesh @UCB @2019
 
-App deployed through Heroku in 
-![under-construction](static/images/under-construction.gif)
-
 ![airlines_project](static/images/flights.PNG)
 
 ## Introduction
