@@ -1,1 +1,1 @@
-FLASK_APP=airline-delay-predictor-ucb/app.py flask run
+FLASK_APP=airline-delay-predictor/app.py flask run
