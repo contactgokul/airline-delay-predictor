@@ -92,10 +92,10 @@ The landing page of the application. This allows the user to select Origin, Dest
 A Gauge meter which indicates the arrival delay percentage in gauge form
 * Route Map:
 Shows the route map using a curved path between the source and destination airport codes. Allows the User to Zoom into the map.
-![image1](static/images/image1.PNG)
+![image1](static/images/image1.png)
 
 * Table:
 A tabular representation of the delay percentage for the selected Airline with arrival delay prediction upto -/+ 3 days highlighting the selected data in Orange color.
 * Bar Chart:
 Bar chart comparison of arrival prediction delay for all airlines.
-![image2](static/images/image2.PNG)
+![image2](static/images/image2.png)
