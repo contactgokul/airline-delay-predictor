@@ -54,27 +54,12 @@ Our App enables you to find the flight that’s most likely get delayed. To do t
   * Scikit-learn (LogisticRegression)
   * HTML, CSS, Bootstrap CSS, Javascript
 
-• Part 1: [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) - Clean and prepare the dataset
-• Part 2: [ML_logistic.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/ML_logistic.ipynb) – Create, train, test, save Logistic regression model
-• Part 3: [Delay_Predict.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Delay_Predict.ipynb) – Test user input
-• Part 4: static/js/[barracechartlogic.js](https://github.com/contactgokul/airports-flights-analysis/tree/master/static/css/barracechartlogic.js)airline.py – Flask, get user input, load model, predict the arrival delay percentage
-• Part 5: gauge.js – plot arrival delay percentage in gauge form
-• Part 6: analytics.js – plot the route map
-• Part 7: barchart.js – plot the bar chart comparison of arrival prediction delay for all airlines
-• Part 8: table.js – plot the +/- 3 days arrival delay prediction for the user input airline
-
-Append DataFrames to tables. Be sure to use the index set earlier.
-* Confirm successful **Load** by querying database.
-* Read the data from the mysql database and convert into a json file and csv file
-	* [airlines_grouped csv file](static/data/airlines_grouped.csv) - used as input for the first visualization
-	* [flights_data json file](static/data/flights_data.json) - used as input for the second visualization
-
 ## Description of Files in Github repository
 Detailed description on how the project was built:
 
 - Main Data Sources
 	- [Airlines data](http://datasets.flowingdata.com/tuts/maparcs/flights.csv)
-	- [Airport details](https://gist.github.com/tdreyno/4278655#file-airports-json)
+	- [Airport details](https://gist.github.com/tdreyno/4278655#file-airports-json) - containing the coordinates of major Airports in the USA.
     - [flights_Year_Data.csv] Downloaded from Kaggle. The file size of this file is 500+MB, not able to upload to GitHub. Download “flights.csv” from “https://www.kaggle.com/usdot/flight-delays#flights.csv” and rename it to “flights_Year_Data.csv” in local
 
 - Back-end
@@ -82,38 +67,35 @@ Detailed description on how the project was built:
 		- @app.route(‘/’) for Main Index File
 		- @app.route("/analytics") for real time visuals and predictions for the predicted
     - [Data_Cleaning.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Data_Cleaning.ipynb) - Clean and prepare the dataset
-    - [ML_logistic.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/ML_logistic.ipynb) – Create, train, test, save Logistic regression model
+    - [ML_logistic.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/ML%20-%20logistic.ipynb) – Create, train, test, save Logistic regression model
     - [Delay_Predict.ipynb](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/Delay_Predict.ipynb) – Test user input
     
 - Front-end
     - templates/[home.html](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/templates/home.html) is the landing page of the Application and allos the User to select the Airlines and other details to predict the delay % and compare with other airlines upon submission
-    - static/js/[analytics.html](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/templates/home.html) is the final page that shows all the predictions, comparisons
+    - static/js/[analytics.html](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/templates/analytics.html) is the final page that shows all the predictions, comparisons
     - static/js/[gauge.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/gauge.js) - plot arrival delay percentage in gauge form
-    - static/js/[analytics.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/analytics.js) - plot the route map
+    - static/js/[analytics.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/analytics.js) - plot the route map using the longitude and latitude coordinates of the airports selected
     - static/js/[barchart.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/barchart.js) - plot the bar chart comparison of arrival prediction delay for all the Airlines
     - static/js/[table.js](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/js/table.js) plot the +/- 3 days arrival delay prediction for the user input airline
-    - static/css/[style.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/css.css) contains formatting specifications
+    - static/css/[style.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/style.css) and static/css/[css.css](https://github.com/bbchopra/project3_airline_delay_prediction_app/blob/master/static/css/css.css) contains formatting specifications
 	- [leaflet.curve.js](https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js) is a new java script which has been used to draw a curved path/line between two sets of coordinates
     - static/js/`config.js` contains the API key for mapbox
 
 ## Output and Analysis
 
 * **Visualizations**
-Insert the images
+* Landing Page:
+The landing page of the application. This allows the user to select Origin, Destination Airports, desired Carrier, desired date of travel, time window and submit the selection
+![Landing Page](static/images/landing_page.PNG)
 
-The landing page of the application has three buttons which direct to three individual dashboards.
+* Guage Chart:
+A Gauge meter which indicates the arrival delay percentage in gauge form
+* Route Map:
+Shows the route map using a curved path between the source and destination airport codes. Allows the User to Zoom into the map.
+![image1](static/images/image1.PNG)
 
-* Airport visualization:
-The result shows location of airports for each state in an aggregated form. User can Zoom in to find the info/details of each individual airport, # of outbound fights.
-
-![Airport Locations](static/images/airport_locations.gif)
-
-* Airport To Airport Route:
-The result shows routes from one airport to connecting airports along with the origin airport details.
-
-![Airport Routes](static/images/airport_routes.gif)
-
-* Airlines Bar Race Chart:
-The result indicated that Delta Airlines (DL) had flown maximum flights
-
-![Bar Race Chart](static/images/bar_race_Chart.gif)
+* Table:
+A tabular representation of the delay percentage for the selected Airline with arrival delay prediction upto -/+ 3 days highlighting the selected data in Orange color.
+* Bar Chart:
+Bar chart comparison of arrival prediction delay for all airlines.
+![image2](static/images/image2.PNG)
